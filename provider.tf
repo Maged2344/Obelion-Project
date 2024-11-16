@@ -4,6 +4,7 @@ provider "aws" {
 
 }
 
+#### tf.statefile in s3 & to lock state ####
 terraform {
   backend "s3" {
     bucket         = "obelion-terraform-state-file"
