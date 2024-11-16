@@ -15,3 +15,4 @@ The project aims to automate the setup of a secure and scalable infrastructure u
 ![image](https://github.com/user-attachments/assets/a93620c5-d136-40b6-b8ac-b93f6ea59d8c)
 ![image](https://github.com/user-attachments/assets/59a51566-d318-45e2-9f30-8f5858c7097f)
 
+frontend work on http://44.201.107.105:3001/
