@@ -22,7 +22,7 @@ resource "aws_db_instance" "mysql" {
 
 # RDS Subnet Group
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name       = "rds-subnet-group"
+  name       = "new-rds-subnet-group"
   subnet_ids = [module.networking.private_subnets["private_subnet_1a"].id, module.networking.private_subnets["private_subnet_1b"].id]
 
   tags = {

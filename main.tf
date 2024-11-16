@@ -42,6 +42,7 @@ module "backend_ec2" {
             sudo systemctl start docker
             sudo systemctl enable docker
             sudo apt install git-all
+            
             # Pull Laravel Docker image
             git clone https://github.com/Maged2344/backend-app
             cd backend-app
