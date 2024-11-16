@@ -4,7 +4,7 @@ variable "aws_region" {
 
 variable "key_name" {
   description = "Name of the AWS key pair"
-  default     = "key" 
+  default     = "key"
 }
 
 variable "db_username" {
