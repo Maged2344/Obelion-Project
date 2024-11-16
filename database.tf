@@ -17,7 +17,7 @@ resource "aws_db_instance" "mysql" {
   tags = {
     Name = "MySQL-RDS"
   }
-  depends_on = [ module.networking] 
+  depends_on = [module.networking]
 }
 
 # RDS Subnet Group
@@ -28,6 +28,6 @@ resource "aws_db_subnet_group" "rds_subnet_group" {
   tags = {
     Name = "RDSSubnetGroup"
   }
-  depends_on = [ module.networking ]
+  depends_on = [module.networking]
 }
 
