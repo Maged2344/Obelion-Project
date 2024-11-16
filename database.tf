@@ -17,37 +17,17 @@ resource "aws_db_instance" "mysql" {
   tags = {
     Name = "MySQL-RDS"
   }
+  depends_on = [ module.networking] 
 }
 
 # RDS Subnet Group
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "rds-subnet-group"
-  subnet_ids = [aws_subnet.private_subnet_a.id, aws_subnet.private_subnet_b.id]
+  subnet_ids = [module.networking.private_subnets["private_subnet_1a"].id, module.networking.private_subnets["private_subnet_1b"].id]
 
   tags = {
     Name = "RDSSubnetGroup"
   }
-}
-
-# Private Subnet A for RDS
-resource "aws_subnet" "private_subnet_a" {
-  vpc_id            = aws_vpc.custom_vpc.id
-  cidr_block        = "10.0.2.0/24"
-  availability_zone = "us-east-1b"
-
-  tags = {
-    Name = "PrivateSubnetA"
-  }
-}
-
-# Private Subnet B for RDS in a different Availability Zone
-resource "aws_subnet" "private_subnet_b" {
-  vpc_id            = aws_vpc.custom_vpc.id
-  cidr_block        = "10.0.3.0/24"
-  availability_zone = "us-east-1a"
-
-  tags = {
-    Name = "PrivateSubnetB"
-  }
+  depends_on = [ module.networking ]
 }
 

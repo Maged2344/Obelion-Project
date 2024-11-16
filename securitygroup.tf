@@ -1,6 +1,6 @@
 # Security Group for EC2 Instances
 resource "aws_security_group" "ec2_sg" {
-  vpc_id = aws_vpc.custom_vpc.id
+  vpc_id = module.networking.vpc_id
 
   ingress {
     from_port   = 22
@@ -47,7 +47,7 @@ resource "aws_security_group" "ec2_sg" {
 # Security group for RDS
 resource "aws_security_group" "rds_sg" {
   name   = "rds-sg"
-  vpc_id = aws_vpc.custom_vpc.id
+  vpc_id = module.networking.vpc_id
 
   ingress {
     from_port   = 3306
