@@ -1,7 +1,7 @@
-# Security Group for EC2 Instances
+#### Security Group for EC2 Instances ####
 resource "aws_security_group" "ec2_sg" {
   vpc_id = module.networking.vpc_id
-
+#### ssh ####
   ingress {
     from_port   = 22
     to_port     = 22
@@ -15,21 +15,21 @@ resource "aws_security_group" "ec2_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+#### just test a docker file ####
   ingress {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+#### for backend port ####
   ingress {
     from_port   = 8000
     to_port     = 8000
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+#### for front end app ####
   ingress {
     from_port   = 3001
     to_port     = 3001
@@ -37,7 +37,7 @@ resource "aws_security_group" "ec2_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
+#### egress for communication from ec2 to outside ####
   egress {
     from_port   = 0
     to_port     = 0
@@ -50,7 +50,7 @@ resource "aws_security_group" "ec2_sg" {
   }
 }
 
-# Security group for RDS
+#### Security group for RDS ####
 resource "aws_security_group" "rds_sg" {
   name   = "rds-sg"
   vpc_id = module.networking.vpc_id
