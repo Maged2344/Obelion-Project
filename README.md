@@ -1,5 +1,7 @@
 # uptime-kuma-project
 # Obelion Terraform Project
+![image](https://github.com/user-attachments/assets/6b8402d3-8a4c-4806-94ab-2094bfca3c85)
+# 16 resources created  
 
 This repository contains Terraform configurations to provision various AWS resources and infrastructure components, including S3 for storing Terraform state files, EC2 instances, RDS, networking components, and CloudWatch for monitoring.
 rds is connected to backend ec2 
