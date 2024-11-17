@@ -34,8 +34,8 @@ module "backend_ec2" {
     created_by = "terraform"
 
   }
-  depends_on = [module.networking]
-  user_data  = <<-EOF
+  depends_on = [module.networking]   #### to create network before ec2 ####
+  user_data  = <<-EOF                #### trying to clone the code and build it with dockerfile just practing to dockerize the application ####
             #!/bin/bash
             sudo apt-get update
             sudo apt-get install -y docker.io docker-compose
