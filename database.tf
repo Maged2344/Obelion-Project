@@ -1,4 +1,4 @@
-# MySQL RDS Database in Private Subnets
+#### MySQL RDS Database in Private Subnets ####
 resource "aws_db_instance" "mysql" {
   allocated_storage         = 20
   storage_type              = "gp2"
@@ -20,7 +20,7 @@ resource "aws_db_instance" "mysql" {
   depends_on = [module.networking]
 }
 
-# RDS Subnet Group
+#### RDS Subnet Group ####
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "new-rds-subnet-group"
   subnet_ids = [module.networking.private_subnets["private_subnet_1a"].id, module.networking.private_subnets["private_subnet_1b"].id]
