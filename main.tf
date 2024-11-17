@@ -30,7 +30,7 @@ module "backend_ec2" {
   subnet_id              = module.networking.public_subnets["public_subnet_1a"].id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   tags = {
-    name       = "back-end"
+    Name       = "back-end"
     created_by = "terraform"
 
   }
@@ -57,7 +57,7 @@ module "frontend_ec2" {
   subnet_id              = module.networking.public_subnets["public_subnet_1a"].id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   tags = {
-    name       = "front-end"
+    Name       = "front-end"
     created_by = "terraform"
 
   }
