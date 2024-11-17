@@ -7,7 +7,8 @@ rds is connected to backend ec2
 ## 🚀 Project Overview
 
 The project aims to automate the setup of a secure and scalable infrastructure using **Terraform**. This includes setting up:
-- **S3** for storing Terraform state files and enabling state locking
+- **S3** for storing Terraform state files 
+- **dynamodb** for enabling state locking
 - **Network module** with VPC, subnets, route tables, internet gateway, and security groups
 - **EC2 modules** for both frontend and backend application servers
 - **RDS** for managed relational database service
